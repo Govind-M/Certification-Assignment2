@@ -12,5 +12,5 @@ COPY . /var/www/html/
 # Expose the default Apache port
 EXPOSE 99
 
-# Start Apache in the foreground
+# Command to Start Apache in the foreground
 CMD ["apachectl", "-D", "FOREGROUND"]
