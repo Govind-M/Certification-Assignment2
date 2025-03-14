@@ -10,7 +10,7 @@ RUN apt-get update && \
 COPY . /var/www/html/
 
 # Expose the default Apache port
-EXPOSE 99
+EXPOSE 80
 
 # Command to Start Apache in the foreground
 CMD ["apachectl", "-D", "FOREGROUND"]
