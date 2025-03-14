@@ -6,6 +6,11 @@ RUN apt-get update && \
     apt-get install -y apache2 && \
     apt-get clean
 
+
+# Change Apache to listen on port 99
+RUN sed -i 's/80/99/g' /etc/apache2/ports.conf /etc/apache2/sites-enabled/000-default.conf
+
+
 # Copy application code into the container
 COPY . /var/www/html/
 
