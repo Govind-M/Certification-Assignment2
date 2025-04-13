@@ -24,12 +24,6 @@ pipeline {
                 sh 'docker build -t $IMAGE -f dockerfile.txt .'
             }
         }
-        stage('Stop and Remove Existing Container') {
-            steps {
-                sh 'docker stop $CONTAINER_NAME || true'
-                sh 'docker rm $CONTAINER_NAME || true'
-            }
-        }
 	stage('Push to DockerHub') {
       		steps {
         		withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'DOCKER_PASS')]) {
