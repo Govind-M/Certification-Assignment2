@@ -37,6 +37,7 @@ pipeline {
 	 stage('Deploy to Kubernetes') {
       		steps {
         		sh '''
+			envsubst < deployment.yaml.template > deployment.yaml
           		kubectl apply -f deployment.yaml
           		kubectl apply -f service.yaml
         		'''
