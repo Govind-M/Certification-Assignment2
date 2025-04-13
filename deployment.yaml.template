@@ -15,6 +15,7 @@ spec:
       containers:
       - name: apache-container
         image: ${IMAGE}
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         workingDir: /var/www/html
