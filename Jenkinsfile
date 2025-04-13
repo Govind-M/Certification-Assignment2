@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $IMAGE -f dockerfile.txt .'
+                sh 'docker build --no-cache -t $IMAGE -f dockerfile.txt .'
             }
         }
 	stage('Push to DockerHub') {
